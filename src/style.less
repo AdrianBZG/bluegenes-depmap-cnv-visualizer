@@ -1,0 +1,68 @@
+.bluegenesDepMapCnv {
+  // put all your css classes inside this block. Keeping them
+  // nested under the tool name prevents your styles from
+  // leaking out and affecting other elements by accident.
+
+  // If you want to learn more about LESS, visit lesscss.org.
+
+  // to build your css, run `lessc src/style.css dist/style.css --clean-css`
+  // in your terminal
+
+
+  // this is just an example class for root div element, you may modify or delete it as per your usecase
+	.rootContainer {
+		border: 1px solid black;
+    padding: 8px 20px;
+    width:100%;
+  }
+
+  .js-plotly-plot {
+    width:100%;
+  }
+  
+  .error {
+		font-size: 22px;
+		font-weight: 300;
+		text-align: center;
+  }
+  
+  .loading {
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		svg {
+			width: 3.75em;
+			transform-origin: center;
+			animation: rotate 2s linear infinite;
+    }
+    circle {
+      fill: none;
+      stroke: #fc2f70;
+      stroke-width: 2;
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+      stroke-linecap: round;
+      animation: dash 1.5s ease-in-out infinite;
+    }
+    
+    @keyframes rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+    @keyframes dash {
+      0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+      }
+      50% {
+        stroke-dasharray: 90, 200;
+        stroke-dashoffset: -35px;
+      }
+      100% {
+        stroke-dashoffset: -125px;
+      }
+    }
+  }
+}
